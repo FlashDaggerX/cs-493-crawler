@@ -14,12 +14,12 @@ public class App {
 
         // Attempt to get the document and error otherwise.
         try {
-            soup = Jsoup.connect("https://footlocker.com").userAgent(USER_AGENT).get();
+            soup = Jsoup.connect("https://footlocker.com/search").userAgent(USER_AGENT).data("query", "blue").get();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         // Get the header tags and print out the inner text on each one
-        soup.select("h1").forEach((e) -> System.out.println(e.text()));
+        soup.select("span[class=ProductName-primary]").forEach((e) -> System.out.println(e.text()));
     }
 }
