@@ -11,10 +11,10 @@ public class App {
 
     public static void main(String[] args) {
         Document soup = null;
-
+        final String url = "https://footlocker.com/search";
         // Attempt to get the document and error otherwise.
         try {
-            soup = Jsoup.connect("https://footlocker.com/search").userAgent(USER_AGENT).data("query", "blue").get();
+            soup = Jsoup.connect(url).userAgent(USER_AGENT).data("query", "blue").get();
         } catch (IOException e) {
             e.printStackTrace();
         }
