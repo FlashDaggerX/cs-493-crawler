@@ -18,6 +18,8 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+.settings/
+bin/
 
 # Visual Studio Code
 .vscode/
