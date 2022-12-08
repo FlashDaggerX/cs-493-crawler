@@ -47,7 +47,7 @@ public class Shoelist implements Iterable<Element> {
 	@Override
 	public Iterator<Element> iterator() {
 		return shoelist
-			.select("a[class=ProductCard-link ProductCard-content]")
-			.iterator();
+				.select("a[class=ProductCard-link ProductCard-content]")
+				.iterator();
 	}
 }

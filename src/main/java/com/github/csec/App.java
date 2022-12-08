@@ -8,12 +8,11 @@ public class App {
 	public static void main(String[] args) {
 		String query = parseQueryArgument(args);
 
-		new Sitemap()
-			.findBrand(query)
-			.shoes(0)
-			.forEach((shoe) -> {
-				System.out.printf("%s %.2f\n", shoe.title, shoe.originalPrice);
-			});
+		ShoeCSV handle = ShoeCSV.openCSVHandle(query);
+		new Sitemap().findBrand(query)
+			.shoes(200)
+			.forEach(handle::write);
+		handle.close();
 	}
 
 	public static String parseQueryArgument(String[] args) {
